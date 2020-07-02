@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel="stylesheet", href="/css_original/normalize.css")
+        link(rel="stylesheet", href="/css_original/app.css")
+        meta(name='author', content='')
+        //- link(href='/css_original/bootstrap.css', rel='stylesheet')
+        //- style(type='text/css').
+        //-     body {
+        //-     padding-top: 20px;
+        //-     padding-bottom: 40px;
+        //-     }
+        //-     /* Custom container */
+        //-     .container-narrow {
+        //-     margin: 0 auto;
+        //-     max-width: 700px;
+        //-     }
+        //-     .container-narrow > hr {
+        //-     margin: 30px 0;
+        //-     }
+        //-     /* Main marketing message and sign up button */
+        //-     .jumbotron {
+        //-     margin: 60px 0;
+        //-     text-align: center;
+        //-     }
+        //-     .jumbotron h1 {
+        //-     font-size: 72px;
+        //-     line-height: 1;
+        //-     }
+        //-     .jumbotron .btn {
+        //-     font-size: 21px;
+        //-     padding: 14px 24px;
+        //-     }
+        //-     /* Supporting marketing content */
+        //-     .marketing {
+        //-     margin: 60px 0;
+        //-     }
+        //-     .marketing p + h4 {
+        //-     margin-top: 28px;
+        //-     }
+        //- link(href='/css_original/bootstrap-responsive.css', rel='stylesheet')
+        title #{nombrePAgina}
+
+    body
+        header.barra
+            h1 myCD Migration Manager
+            a(href="#") Cerrar Sesión
+
+        main.contenedor
+            aside.contenedor-proyectos
+
+                .panel.crear-proyecto
+                    a(href="/nuevo-proyecto" class="boton span") Nuevo Servicio
+                .panel.lista-proyectos
+                    h2 Servicios
+                    ul#proyectos.proyectos
+                        if(proyectos.length)
+                            each proyecto in proyectos
+                                li 
+                                    a(href=`/proyecto/${proyecto.url}`)=proyecto.nombre
+                
+            block contenido
+
+            //- pre=vardump(proyectos)

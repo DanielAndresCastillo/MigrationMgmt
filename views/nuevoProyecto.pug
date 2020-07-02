@@ -1,0 +1,116 @@
+extends layout
+
+block contenido
+
+    .contenido-principal
+        h1 #{nombrePagina}
+
+        if errores
+            each error in errores
+                .alerta=error.texto
+
+        form.agregar-proyecto(action="/nuevo-proyecto" method="POST")
+            .campo
+                label(for="nombre") Nombre Proyecto:
+                input(type="text" id="nombre" name="nombre" placeholder="Nombre Proyecto/Servicio")
+            .campo
+                label(for="ServiceName") Service Name:
+                input(type="text" id="ServiceName" name="ServiceName" placeholder="Nombre Proyecto/Servicio")
+            .campo
+                label(for="ServiceId") Service Id:
+                input(type="text" id="ServiceId" name="ServiceId" placeholder="Service Id") 
+            .campo
+                label(for="BusinessUnit") Business Unit:
+                input(type="text" id="BusinessUnit" name="BusinessUnit" placeholder="Business Unit") 
+            .campo
+                label(for="ServiceOwner") Service Owner:
+                input(type="text" id="ServiceOwner" name="ServiceOwner" placeholder="Service Owner")
+            .campo
+                label(for="Description") Description:
+                input(type="text" id="Description" name="Description" placeholder="Description")
+            .campo
+                label(for="MigrationStatus") MigrationStatus:
+                input(type="text" id="MigrationStatus" name="MigrationStatus" placeholder="MigrationStatus")
+            .campo
+                label(for="MigrationPlanDate") MigrationPlanDate:
+                input(type="text" id="MigrationPlanDate" name="MigrationPlanDate" placeholder="MigrationPlanDate")
+            .campo
+                label(for="Analytis") Analytis:
+                input(type="text" id="Analytis" name="Analytis" placeholder="Analytis")
+            .campo
+                label(for="Dependencies") Dependencies:
+                input(type="text" id="Dependencies" name="Dependencies" placeholder="Dependencies")
+            .campo
+                label(for="MigrationTechnique") MigrationTechnique:
+                input(type="text" id="MigrationTechnique" name="MigrationTechnique" placeholder="MigrationTechnique")
+            .campo
+                label(for="RTO") RTO:
+                input(type="text" id="RTO" name="RTO" placeholder="RTO")
+            .campo
+                label(for="RPO") RPO:
+                input(type="text" id="RPO" name="RPO" placeholder="RPO")
+            .campo
+                label(for="Criticality") Description:
+                input(type="text" id="Criticality" name="Criticality" placeholder="Criticality")
+            .campo
+                label(for="MigrationActualDate") MigrationActualDate:
+                input(type="text" id="MigrationActualDate" name="MigrationActualDate" placeholder="MigrationActualDate")
+            .campo
+                label(for="Uptime") Description:
+                input(type="text" id="Uptime" name="Uptime" placeholder="Uptime")
+            .campo
+                label(for="DowntimeAllowed") DowntimeAllowed:
+                input(type="text" id="DowntimeAllowed" name="DowntimeAllowed" placeholder="DowntimeAllowed")
+            .campo
+                label(for="MigrationGroup") MigrationGroup:
+                input(type="text" id="MigrationGroup" name="MigrationGroup" placeholder="MigrationGroup")
+            .campo
+                label(for="TestPlan") TestPlan:
+                input(type="text" id="TestPlan" name="TestPlan" placeholder="TestPlan")
+            .campo
+                label(for="CurrentLocation") CurrentLocation:
+                input(type="text" id="CurrentLocation" name="CurrentLocation" placeholder="CurrentLocation")
+            .campo
+                label(for="Platform") Platform:
+                input(type="text" id="Platform" name="Platform" placeholder="Platform")
+            .campo
+                label(for="FutureLocation") FutureLocation:
+                input(type="text" id="FutureLocation" name="FutureLocation" placeholder="FutureLocation")                
+
+            .campo.enviar
+                input(type="submit" value="Agregar" class="boton")
+
+
+
+        //- form
+        //-     .form-row
+        //-         .form-group.col-md-6
+        //-             label(for='inputEmail4') Email
+        //-             input#inputEmail4.form-control(type='email' placeholder='Email')
+        //-         .form-group.col-md-6
+        //-             label(for='inputPassword4') Password
+        //-             input#inputPassword4.form-control(type='password' placeholder='Password')
+        //-     .form-group
+        //-         label(for='inputAddress') Address
+        //-         input#inputAddress.form-control(type='text' placeholder='1234 Main St')
+        //-     .form-group
+        //-         label(for='inputAddress2') Address 2
+        //-         input#inputAddress2.form-control(type='text' placeholder='Apartment, studio, or floor')
+        //-     .form-row
+        //-         .form-group.col-md-6
+        //-             label(for='inputCity') City
+        //-             input#inputCity.form-control(type='text')
+        //-         .form-group.col-md-4
+        //-             label(for='inputState') State
+        //-             select#inputState.form-control
+        //-                 option(selected='') Choose...
+        //-                 option ...
+        //-         .form-group.col-md-2
+        //-             label(for='inputZip') Zip
+        //-             input#inputZip.form-control(type='text')
+        //-     .form-group
+        //-         .form-check
+        //-             input#gridCheck.form-check-input(type='checkbox')
+        //-             label.form-check-label(for='gridCheck')
+        //-                 | Check me out
+        //-     button.btn.btn-primary(type='submit') Sign in
